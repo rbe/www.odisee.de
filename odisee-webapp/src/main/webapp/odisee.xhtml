@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+        >
+
+<ui:composition template="layout.xhtml">
+
+    <ui:define name="content">
+
+        <div id="wrapper-content">
+            <div id="content" class="clearfix">
+                <div id="contentinnermenu">
+                    <div class="moduletable_products">
+                        <ul class="menu">
+                            <li class="item-178">
+                                <h:outputLink value="#{facesContext.externalContext.requestContextPath}/product/odisee-server.xhtml">Odisee Server</h:outputLink>
+                            </li>
+                            <li class="item-178">
+                                <h:outputLink value="#{facesContext.externalContext.requestContextPath}/product/odisee-client.xhtml">Odisee Client</h:outputLink>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="contentinner">
+                        <div class="item-page">
+                            <p class="ueberschrift1">Odisee - Eine Definition</p>
+                            <ul>
+                                <li>
+                                    <strong>Output Management</strong>
+                                    ist die Erstellung, Generierung, Steuerung und Verteilung von elektronischen oder physisch vorliegenden Dokumenten an alle vorgesehenen Empf&auml;nger im Unternehmen oder außerhalb eines Unternehmens.
+                                </li>
+                                <li>
+                                    <strong>Output Management</strong>
+                                    hat die Versorgung von Mitarbeitern und Externen (Kunden, Interessenten etc.) mit notwendigen Dokumenten zum Ziel. Zudem sollten die Dokumente leicht lesbar, druckbar oder speicherbar sein.
+                                </li>
+                                <li>
+                                    In Unternehmen mit verteilten Standorten kann zum
+                                    <strong>Output Management</strong>
+                                    beispielsweise der zentral ausgel&ouml;ste Druck von Dokumenten im entfernten Standort sein.
+                                </li>
+                                <li>
+                                    “Das
+                                    <strong>Output Management</strong>
+                                    hat die Aufgabe, Fehler zu erkennen und ggf. die Auslieferung (bspw. den Druck) &uuml;ber ein alternatives System erneut auszuf&uuml;hren. [...]
+                                </li>
+                                <li>Quelle: Wikipedia</li>
+                            </ul>
+                            <p>&nbsp;</p>
+                            <p class="ueberschrift1">Warum Odisee</p>
+                            <p>
+                                “Output Management ist ... die Verteilung im Unternehmen oder außerhalb des Unternehmens.”<br/>
+                                Daraus resultieren wichtige Ziele, die auch bei Änderungen jederzeit eingehalten werden m&uuml;ssen:
+                            </p>
+                            <ul>
+                                <li>Benutzer und Applikationen m&uuml;ssen tageslisttaugliche Dokumente produzieren</li>
+                                <li>Einhaltung des Corporate Design des Layout ist sehr wichtig</li>
+                                <li>Dokumente m&uuml;ssen akurat sein, korrekte Gesch&auml;ftsangaben (GF, Kontoverbindung) und korrekte Aussagen beinhalten - Haftungsrisiken drohen!</li>
+                                <li>Dokumente sollen/m&uuml;ssen immer gleich aussehen</li>
+                                <li>Benutzer und Applikationen sollen die gleichen Elemente nutzen</li>
+                                <li>Oftmals sehr schwierig, aufgrund verschiedener Technologien</li>
+                                <li>Unabh&auml;ngig sein von Benutzern und/oder Applikationen</li>
+                                <li>Kopieren alter Dokumente verhindern</li>
+                            </ul>
+                            <p>&nbsp;</p>
+                            <p class="ueberschrift1">Odisee - Ein kurzes How To</p>
+                            <p>Alle Dokumentenvorlagen werden mit einer einzigen Technologie (OpenOffice) erstellt:</p>
+                            <ul>
+                                <li>Benutzern sind diese Vorlagen durch OpenOffice Extension zug&auml;nglich</li>
+                                <li>ERP/CRM erstellen Dokumente durch Anlieferung von Daten z.B. an einen Web Service</li>
+                                <li>Online Shop erstellt Auftragsbest&auml;tigungen durch Nutzung einer Bibliothek oder eines Web Service</li>
+                            </ul>
+                            <p>Einsatz eines Textverarbeitungssystems - OpenOffice.org - Warum?</p>
+                            <ul>
+                                <li>Deutlich mehr M&ouml;glichkeiten f&uuml;r das Layout als z.B. mit Access Reports, iText: Seitenvorlagen, Autotexte, Silbentrennung, Absatzformatierungen</li>
+                                <li>Erweiterung durch Makros und Komponenten in vielen Sprachen m&ouml;glich: StarBasic, Java, Python, Ruby, BeanShell, C#</li>
+                                <li>OOo bietet Schnittstellen via API, Named Pipes und TCP/IP!</li>
+                                <li>Layout der Vorlagen nach dem Corporate Design via WYSIWYG</li>
+                                <li>Nutzung von variablen Elementen wie Tabellen, Bereiche, Benutzerfelder, Autotexte ...</li>
+                                <li>Letzter Schliff mit Makros: StarBasic, Python, Java, ...</li>
+                            </ul>
+                            <p>&nbsp;</p>
+                            <p class="ueberschrift1">Odisee - Argumente f&uuml;r den Einsatz</p>
+                            <ul>
+                                <li>OpenOffice - Die Vorteile freier Software nutzen. Keine Lizenzkosten</li>
+                                <li>OpenOffice Extension f&uuml;r Benutzer</li>
+                                <li>Vorlagen zentral auf &uuml;ber einen HTTP-Server ausliefern bzw. zug&auml;nglich machen.</li>
+                                <li>Vorlagen beinhalten Benutzerfelder um eine gezielte Bearbeitung eines Dokuments zu unterst&uuml;tzen</li>
+                                <li>Gesperrte Bereiche stellen z.B. vom Benutzer nicht &auml;nderbare Inhalte dar, z.B. Anrede und Grußformel</li>
+                                <li>Verschiedene Versionen von Text sind durch versteckte Abs&auml;tze m&ouml;glich</li>
+                                <li>Inhalte k&ouml;nnen frei und mithilfe von Autotexten, auch in Kombination mit Benutzerfeldern, ausgestaltet werden</li>
+                            </ul>
+                            <p>&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>
+
+</html>

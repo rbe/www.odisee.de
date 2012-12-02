@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:cc="http://java.sun.com/jsf/composite">
+
+<!-- INTERFACE -->
+<cc:interface>
+</cc:interface>
+
+<!-- IMPLEMENTATION -->
+<cc:implementation>
+    <h:outputScript library="js" name="jquery-1.6.js"/>
+    <h:outputScript library="js" name="jquery.easing.1.3.js"/>
+    <h:outputScript library="js" name="tms-0.3.js"/>
+    <h:outputScript library="js" name="tms_presets.js"/>
+    <h:outputScript library="js" name="jcarousellite.js"/>
+    <script type="text/javascript" language="JavaScript">
+        $(window).load(function() {
+            $('.slider')._TMS({
+                preset: 'diagonalFade',
+                easing: 'easeOutQuad',
+                duration: 800,
+                pagination: true,
+                slideshow: 6000
+            });
+            $("#testimonials").jCarouselLite({
+                btnNext: ".down",
+                btnPrev: ".up",
+                visible: 1,
+                speed: 600,
+                vertical: true,
+                circular: true,
+                easing: 'easeOutCirc'
+            });
+        })
+    </script>
+</cc:implementation>
+
+        </html>

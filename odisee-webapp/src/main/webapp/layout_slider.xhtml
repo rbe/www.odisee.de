@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:odi="http://java.sun.com/jsf/composite/odi">
+<h:head>
+    <odi:htmlhead/>
+</h:head>
+<h:body styleClass="body_bg">
+    <div id="wrapper">
+        <div id="header_full" class="clearfix">
+            <div class="wrapper_menu">
+                <h1>
+                    <h:outputLink value="index.xhtml" class="logo">Odisee - Output Management - Serving your documents</h:outputLink>
+                </h1>
+                <div id="topmenu">
+                    <div class="topmenu_inner">
+                        <div class="moduletable_main">
+                            <ul class="menu">
+                                <li class="current active">
+                                    <h:outputLink value="#{facesContext.externalContext.requestContextPath}/index.xhtml">Home</h:outputLink>
+                                </li>
+                                <li class="">
+                                    <h:outputLink value="#{facesContext.externalContext.requestContextPath}/produkt.xhtml">Das Produkt</h:outputLink>
+                                </li>
+                                <li class="">
+                                    <h:outputLink value="#{facesContext.externalContext.requestContextPath}/kontakt.xhtml">Kontakt</h:outputLink>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper_slider">
+                <div class="slider">
+                    <ul class="items">
+                        <li>
+                            <h:graphicImage alt="Odisee make your documents smile!" library="images" name="slider_odisee_01.jpg"/>
+                        </li>
+                        <li>
+                            <h:graphicImage alt="Odisee Vorlagen f&uuml;r Korrespondenz, Buchhaltung, Rechnungen, Angebote, Reklamationen, Protokolle, Mitteilungen u.a.m." library="images" name="slider_odisee_03.jpg"/>
+                        </li>
+                        <li>
+                            <h:graphicImage alt="Mit Odisee Dokumente automatisiert erstellen, generieren, steuern und verteilen!" library="images" name="slider_odisee_02.jpg"/>
+                        </li>
+                        <li>
+                            <h:graphicImage alt="Odisee ist MULTIFUNKTIONAL - XML, Webservices, Makros, Java, Python, StarBasic, Ruby, C#, BeanShell, u.a." library="images" name="slider_odisee_04.jpg"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ui:insert name="content"/>
+    <h:messages/>
+    <odi:javascript/>
+    <odi:googleanalytics/>
+</h:body>
+</html>

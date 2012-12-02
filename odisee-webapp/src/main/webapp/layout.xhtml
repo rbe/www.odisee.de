@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:odi="http://java.sun.com/jsf/composite/odi">
+<h:head>
+    <odi:htmlhead/>
+</h:head>
+<f:metadata>
+    <f:viewParam name="id" value="#{state.idFromRequest}"/>
+    <f:event type="preRenderView" listener="#{state.preRenderView}"/>
+</f:metadata>
+<h:body styleClass="body_bgsmall">
+    <div id="wrapper-header">
+        <div id="header_small" class="clearfix">
+            <div class="wrapper_menu_small">
+                <h1>
+                    <h:outputLink value="#{facesContext.externalContext.requestContextPath}/index.xhtml" class="logo">Odisee - Output Management - Serving your documents</h:outputLink>
+                </h1>
+                <div id="topmenu">
+                    <div class="topmenu_inner">
+                        <div class="moduletable_main">
+                            <ul class="menu">
+                                <li class="item-101">
+                                    <h:outputLink value="#{facesContext.externalContext.requestContextPath}/index.xhtml">Home</h:outputLink>
+                                </li>
+                                <li class="item-192">
+                                    <h:outputLink value="#{facesContext.externalContext.requestContextPath}/produkt.xhtml">Das Produkt</h:outputLink>
+                                </li>
+                                <li class="item-195">
+                                    <h:outputLink value="#{facesContext.externalContext.requestContextPath}/kontakt.xhtml">Kontakt</h:outputLink>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="moduletable_slidersmall">
+                <ui:insert name="slidersmall"/>
+            </div>
+            <div id="header_small_ID178"></div>
+        </div>
+    </div>
+    <ui:insert name="content"/>
+    <h:messages/>
+    <odi:footer/>
+    <odi:googleanalytics/>
+</h:body>
+</html>

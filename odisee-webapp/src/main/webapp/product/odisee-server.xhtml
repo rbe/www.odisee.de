@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="../layout.xhtml">
+
+    <ui:define name="slidersmall">
+
+        <div class="custom_slidersmall">
+            <h:graphicImage alt="Odisee" library="images" name="sheader_#{state.viewId}.png" width="940" height="161" style="margin-top: -30px;"/>
+        </div>
+
+    </ui:define>
+
+    <ui:define name="content">
+
+        <div id="wrapper-content">
+            <div id="content" class="clearfix">
+                <div id="contentinnermenu">
+                    <div class="moduletable_products">
+                        <ul class="menu">
+                            <li class="item-178 current active">
+                                <h:outputLink value="#{facesContext.externalContext.requestContextPath}/product/odisee-server.xhtml">Odisee Server</h:outputLink>
+                            </li>
+                            <li class="item-178">
+                                <h:outputLink value="#{facesContext.externalContext.requestContextPath}/product/odisee-client.xhtml">Odisee Client</h:outputLink>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="contentinner">
+                        <div class="item-page">
+                            <h:form>
+                                <h1>Download Odisee&reg; Server</h1>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <p>
+                                    Version 2.2.3 vom 15.11.2012
+                                </p>
+                                <h2>Windows x64</h2>
+                                <h5>64 Bit</h5>
+                                <ul>
+                                    <li>
+                                        <h:commandLink action="#{download.start('odisee-server', 'windows-x64-installer')}">Installer f&uuml;r 64 Bit (.exe)</h:commandLink>
+                                    </li>
+                                </ul>
+                                <h5>32 Bit</h5>
+                                <ul>
+                                    <li>
+                                        <h:commandLink action="#{download.start('odisee-server', 'windows-x86-installer')}">Installer f&uuml;r 32 Bit (.exe)</h:commandLink>
+                                    </li>
+                                </ul>
+                                <h2>Linux&trade;</h2>
+                                <h5>32 und 64 Bit</h5>
+                                <ul>
+                                    <li>
+                                        <h:commandLink action="#{download.start('odisee-server', 'linux-deb')}">Debian GNU/Linux (.deb)</h:commandLink>
+                                    </li>
+                                    <li>
+                                        <h:commandLink action="#{download.start('odisee-server', 'linux-rpm')}">RedHat Package Manager (.rpm)</h:commandLink>
+                                    </li>
+                                    <li>
+                                        <h:commandLink action="#{download.start('odisee-server', 'linux-tgz')}">Archiv (.tar.gz)</h:commandLink>
+                                    </li>
+                                </ul>
+                                <h2>FreeBSD&trade;</h2>
+                                <h5>32 und 64 Bit</h5>
+                                <ul>
+                                    <li>
+                                        <h:commandLink action="#{download.start('odisee-server', 'freebsd-tgz')}">Archiv f&uuml;r 32 und 64 Bit (.tar.gz)</h:commandLink>
+                                    </li>
+                                </ul>
+                                <h2>OS X&trade;</h2>
+                                <h5>64 Bit</h5>
+                                <ul>
+                                    <li>
+                                        <h:commandLink action="#{download.start('odisee-server', 'osx-tgz')}">Disk Image f&uuml;r 32 und 64 Bit (.dmg)</h:commandLink>
+                                    </li>
+                                </ul>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>
+
+</html>

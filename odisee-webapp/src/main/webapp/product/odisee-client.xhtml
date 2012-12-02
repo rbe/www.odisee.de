@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="../layout.xhtml">
+
+    <ui:define name="slidersmall">
+
+        <div class="custom_slidersmall">
+            <h:graphicImage alt="Odisee" library="images" name="sheader_#{state.viewId}.png" width="940" height="161" style="margin-top: -30px;"/>
+        </div>
+
+    </ui:define>
+
+    <ui:define name="content">
+
+        <div id="wrapper-content">
+            <div id="content" class="clearfix">
+                <div id="contentinnermenu">
+                    <div class="moduletable_products">
+                        <ul class="menu">
+                            <li class="item-178">
+                                <h:outputLink value="#{facesContext.externalContext.requestContextPath}/product/odisee-server.xhtml">Odisee Server</h:outputLink>
+                            </li>
+                            <li class="item-178 current active">
+                                <h:outputLink value="#{facesContext.externalContext.requestContextPath}/product/odisee-client.xhtml">Odisee Client</h:outputLink>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="contentinner">
+                        <div class="item-page">
+                            <h:form>
+                                <h1>Download Odisee&reg; Client</h1>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <h2>Entwicklung und Test</h2>
+                                <ul>
+                                    <li>Microsoft Windows
+                                        <br/>
+                                        <h:commandLink action="#{download.start('odisee-client', 'client-vbnet')}">Installer f&uuml;r Windows</h:commandLink>
+                                        <br/>
+                                        <h:outputLink value="http://git.odisee.de/client-vbnet/src" target="_blank">Quellcode in Visual Basic .NET</h:outputLink>
+                                    </li>
+                                </ul>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>
+
+</html>

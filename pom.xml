@@ -19,7 +19,7 @@
     </parent>
     <!-- Modules. -->
     <modules>
-        <module>webapp</module>
+        <module>odisee-webapp</module>
     </modules>
     <!--
         Project Information.
@@ -36,10 +36,6 @@
         </developer>
     </developers>
     <contributors>
-        <contributor>
-            <name>Christian Ewe</name>
-            <email>christian@art-of-coding.eu</email>
-        </contributor>
     </contributors>
     <organization>
         <name>art of coding UG</name>
@@ -126,9 +122,9 @@
     <!-- Source Code Management. -->
     <scm>
         <developerConnection>
-            scm:git:[fetch=]ssh://bitbucket.org:bensmann/bensmann.com[push=]ssh://bitbucket.org:bensmann/bensmann.com
+            scm:git:[fetch=]ssh://bitbucket.org:odisee/www.odisee.de[push=]ssh://bitbucket.org:odisee/www.odisee.de
         </developerConnection>
-        <url>https://bitbucket.org/artofcoding/odisee-server</url>
+        <url>https://bitbucket.org/odisee/www.odisee.de</url>
     </scm>
     <!--
         Maven Environment.

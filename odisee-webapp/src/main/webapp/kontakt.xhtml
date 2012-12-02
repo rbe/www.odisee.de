@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://art-of-coding.eu/beetlejuice">
+
+<ui:composition template="layout.xhtml">
+
+    <ui:define name="slidersmall">
+
+        <div class="custom_slidersmall">
+            <h:graphicImage alt="Odisee" library="images" name="sheader_#{state.viewId}.png" width="940" height="134" style="margin-top: -8px;"/>
+        </div>
+
+    </ui:define>
+
+    <ui:define name="content">
+
+        <div id="wrapper-content">
+            <div id="content" class="clearfix">
+                <div id="contentinnermenu">
+                    <div class="moduletable_company">
+                        <ul class="menu">
+                            <li class="active">
+                                <a href="kontakt.xhtml">Kontakt</a>
+                            </li>
+                            <li>
+                                <a href="impressum.xhtml">Impressum</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="contentinner">
+                        <div class="item-page">
+                            <div class="contact-form">
+                                <h:form>
+                                    <h:panelGrid columns="3">
+
+                                        <h:outputLabel for="name" value="Name"/>
+                                        <h:outputText value="&nbsp;&nbsp;&nbsp;"/>
+                                        <h:inputText id="name" value="" maxlength="100" style="width: 300px;"/>
+
+                                        <h:outputLabel for="company" value="Firma"/>
+                                        <h:outputText value="&nbsp;&nbsp;&nbsp;"/>
+                                        <h:inputText id="company" value="" maxlength="100" style="width: 300px;"/>
+
+                                        <h:outputLabel for="address" value="Anschrift"/>
+                                        <h:outputText value="&nbsp;&nbsp;&nbsp;"/>
+                                        <h:inputText id="address" value="" maxlength="100" style="width: 300px;"/>
+
+                                        <h:outputLabel for="zipcode" value="PLZ Ort"/>
+                                        <h:outputText value="&nbsp;&nbsp;&nbsp;"/>
+                                        <h:panelGroup>
+                                            <h:inputText id="zipcode" value="" maxlength="5" style="width: 50px;"/>
+                                            &nbsp;&nbsp;
+                                            <h:inputText id="city" value="" maxlength="100" style="width: 215px;"/>
+                                        </h:panelGroup>
+
+                                        <f:facet name="footer">
+                                        </f:facet>
+
+                                    </h:panelGrid>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>
+
+</html>

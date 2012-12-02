@@ -1,0 +1,178 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--
+        POM.
+    -->
+    <groupId>de.odisee</groupId>
+    <artifactId>odisee-webapp</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <parent>
+        <groupId>de.odisee</groupId>
+        <artifactId>www.odisee.de</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>..</relativePath>
+    </parent>
+    <!--
+        Project Information.
+    -->
+    <name>www.odisee.de</name>
+    <url>http://www.odisee.de</url>
+    <!--
+        Build Settings.
+    -->
+    <packaging>war</packaging>
+    <!-- Properties. -->
+    <properties>
+        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+        <!-- JavaServer Faces -->
+        <version.org.primefaces.primefaces>3.4</version.org.primefaces.primefaces>
+        <!-- JBoss -->
+        <version.org.jboss.as.plugins.jboss-as-maven-plugin>7.2.Final</version.org.jboss.as.plugins.jboss-as-maven-plugin>
+    </properties>
+    <dependencies>
+        <!--
+            Java EE.
+        -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>6.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <!--
+            Beetlejuice.
+        -->
+        <dependency>
+            <groupId>eu.artofcoding.beetlejuice</groupId>
+            <artifactId>beetlejuice-api</artifactId>
+            <version>${version.eu.artofcoding.beetlejuice}</version>
+        </dependency>
+        <dependency>
+            <groupId>eu.artofcoding.beetlejuice</groupId>
+            <artifactId>beetlejuice-web</artifactId>
+            <version>${version.eu.artofcoding.beetlejuice}</version>
+        </dependency>
+        <dependency>
+            <groupId>eu.artofcoding.beetlejuice</groupId>
+            <artifactId>beetlejuice-web-jsfcomponents</artifactId>
+            <version>${version.eu.artofcoding.beetlejuice}</version>
+        </dependency>
+        <!--
+            JavaServer Faces.
+        -->
+        <dependency>
+            <groupId>javax.faces</groupId>
+            <artifactId>javax.faces-api</artifactId>
+            <version>2.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <!--
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.faces</artifactId>
+            <version>2.1.14</version>
+        </dependency>
+        -->
+        <!-- PrimeFaces -->
+        <!--
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>${version.org.primefaces.primefaces}</version>
+        </dependency>
+        -->
+    </dependencies>
+    <build>
+        <plugins>
+            <!-- maven-compiler-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${version.org.apache.maven.plugins.maven-compiler-plugin}</version>
+                <configuration>
+                    <source>${version.java.vm}</source>
+                    <target>${version.java.vm}</target>
+                    <compilerArguments>
+                        <endorseddirs>${endorsed.dir}</endorseddirs>
+                    </compilerArguments>
+                    <verbose/>
+                </configuration>
+            </plugin>
+            <!-- maven-war-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${version.org.apache.maven.plugins.maven-war-plugin}</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <!-- maven-dependency-plugin
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${version.org.apache.maven.plugins.maven-assembly-plugin}</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${endorsed.dir}</outputDirectory>
+                            <silent>true</silent>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>javax</groupId>
+                                    <artifactId>javaee-endorsed-api</artifactId>
+                                    <version>6.0</version>
+                                    <type>jar</type>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            -->
+            <!--
+                jboss-as-maven-plugin
+                http://docs.jboss.org/jbossas/7/plugins/maven/latest/
+            -->
+            <plugin>
+                <groupId>org.jboss.as.plugins</groupId>
+                <artifactId>jboss-as-maven-plugin</artifactId>
+                <version>${version.org.jboss.as.plugins.jboss-as-maven-plugin}</version>
+                <executions>
+                    <!-- Deploy the application on "install" -->
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>redeploy</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Setup SSH tunnel to service.ventplan.com -->
+                            <hostname>localhost</hostname>
+                            <port>9999</port>
+                            <username>admin</username>
+                            <password>Kd7cTp8</password>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <finalName>odisee</finalName>
+    </build>
+    <!--
+        Maven Environment.
+    -->
+    <!-- Repositories. -->
+    <repositories>
+        <repository>
+            <id>primefaces-repo</id>
+            <name>Prime Technology Maven Repository</name>
+            <url>http://repository.primefaces.org</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+</project>
