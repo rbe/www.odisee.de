@@ -37,49 +37,60 @@
                                 <br/>
                                 <br/>
                                 <p>
-                                    Version 2.2.3 vom 15.11.2012
+                                    <h:outputText value="Version #{download.odiseeVersion} vom 16.12.2012"/>
                                 </p>
                                 <h2>Windows x64</h2>
-                                <h5>64 Bit</h5>
                                 <ul>
                                     <li>
-                                        <h:commandLink action="#{download.start('odisee-server', 'windows-x64-installer')}">Installer f&uuml;r 64 Bit (.exe)</h:commandLink>
+                                        <h:commandLink action="#{download.start('odisee-server', 'windows-64-installer')}">Installer (.exe, 64 Bit)</h:commandLink>
                                     </li>
-                                </ul>
-                                <h5>32 Bit</h5>
-                                <ul>
                                     <li>
-                                        <h:commandLink action="#{download.start('odisee-server', 'windows-x86-installer')}">Installer f&uuml;r 32 Bit (.exe)</h:commandLink>
+                                        <h:commandLink action="#{download.start('odisee-server', 'windows-32-installer')}">Installer (.exe, 32 Bit)</h:commandLink>
                                     </li>
                                 </ul>
                                 <h2>Linux&trade;</h2>
-                                <h5>32 und 64 Bit</h5>
                                 <ul>
                                     <li>
-                                        <h:commandLink action="#{download.start('odisee-server', 'linux-deb')}">Debian GNU/Linux (.deb)</h:commandLink>
+                                        <h:commandLink action="#{download.start('odisee-server', 'linux-64-deb')}">Debian GNU/Linux (.deb, 64 Bit)</h:commandLink>
                                     </li>
                                     <li>
-                                        <h:commandLink action="#{download.start('odisee-server', 'linux-rpm')}">RedHat Package Manager (.rpm)</h:commandLink>
+                                        <h:commandLink action="#{download.start('odisee-server', 'linux-64-rpm')}">RedHat Package Manager (.rpm, 64 Bit)</h:commandLink>
                                     </li>
                                     <li>
-                                        <h:commandLink action="#{download.start('odisee-server', 'linux-tgz')}">Archiv (.tar.gz)</h:commandLink>
+                                        <h:commandLink action="#{download.start('odisee-server', 'linux-64-tgz')}">Archiv (.tar.gz, 64 Bit)</h:commandLink>
+                                    </li>
+                                    <li>
+                                        <h:commandLink action="#{download.start('odisee-server', 'linux-32-tgz')}">Archiv (.tar.gz, 32 Bit)</h:commandLink>
                                     </li>
                                 </ul>
                                 <h2>FreeBSD&trade;</h2>
-                                <h5>32 und 64 Bit</h5>
                                 <ul>
                                     <li>
-                                        <h:commandLink action="#{download.start('odisee-server', 'freebsd-tgz')}">Archiv f&uuml;r 32 und 64 Bit (.tar.gz)</h:commandLink>
+                                        <h:commandLink action="#{download.start('odisee-server', 'freebsd-64-tgz')}">Archiv (.tar.gz, 64 Bit)</h:commandLink>
+                                    </li>
+                                    <li>
+                                        <h:commandLink action="#{download.start('odisee-server', 'freebsd-32-tgz')}">Archiv (.tar.gz, 32 Bit)</h:commandLink>
                                     </li>
                                 </ul>
                                 <h2>OS X&trade;</h2>
                                 <h5>64 Bit</h5>
                                 <ul>
                                     <li>
-                                        <h:commandLink action="#{download.start('odisee-server', 'osx-tgz')}">Disk Image f&uuml;r 32 und 64 Bit (.dmg)</h:commandLink>
+                                        <h:commandLink action="#{download.start('odisee-server', 'osx-64-dmg')}">Disk Image (.dmg, 64 Bit)</h:commandLink>
+                                    </li>
+                                    <li>
+                                        <h:commandLink action="#{download.start('odisee-server', 'osx-64-tgz')}">Archiv (.tar.gz, 64 Bit)</h:commandLink>
                                     </li>
                                 </ul>
                             </h:form>
+
+                            <p>
+                                Diese Software ist urheberrechtlich gesch&uuml;tzt. Zur kommerziellen Verwendung ist eine Lizenz erforderlich.<br/>
+                                Copyright &copy; 2011-2012 art of coding UG.<br/>
+                                Copyright &copy; 2005-2010 Informationssysteme Ralf Bensmann.<br/>
+                                Alle Rechte vorbehalten. Nutzung unterliegt Lizenzbedingungen.
+                            </p>
+
                         </div>
                     </div>
                 </div>

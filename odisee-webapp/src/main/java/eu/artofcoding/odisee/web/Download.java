@@ -9,7 +9,11 @@ import java.io.IOException;
 @Named("download")
 public class Download {
 
-    private static final String ODISEE_VERSION = "2_2_3";
+    private final String odiseeVersion = "2_2_3_18";
+
+    public String getOdiseeVersion() {
+        return odiseeVersion;
+    }
 
     public String start(String category, String id) throws IOException {
         FacesHelper facesHelper = FacesHelper.getInstance(FacesContext.getCurrentInstance());
@@ -22,30 +26,38 @@ public class Download {
                 }
                 break;
             case "odisee-server":
+                // $(uname -s)_$(uname -m)
+                // facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_%s_%s.exe", odiseeVersion, platform, bits));
                 switch (id) {
-                    case "windows-x64-installer":
-                        facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_Windows_x64.exe", ODISEE_VERSION));
+                    case "windows-64-installer":
+                        facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_Windows_x64.exe", odiseeVersion));
                         break;
-                    case "windows-x86-installer":
-                        facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_Windows_x86.exe", ODISEE_VERSION));
+                    case "windows-32-installer":
+                        facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_Windows_x86.exe", odiseeVersion));
                         break;
-                    case "linux-tgz":
-                        facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_Linux.tar.gz", ODISEE_VERSION));
+                    case "linux-64-deb":
+                        facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_Linux_x86_64.deb", odiseeVersion));
                         break;
-                    case "linux-deb":
-                        facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_Linux.deb", ODISEE_VERSION));
+                    case "linux-64-rpm":
+                        facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_Linux_x86_64.rpm", odiseeVersion));
                         break;
-                    case "linux-rpm":
-                        facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_Linux.rpm", ODISEE_VERSION));
+                    case "linux-32-tgz":
+                        facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_Linux_x86.tar.gz", odiseeVersion));
                         break;
-                    case "freebsd-tgz":
-                        facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_FreeBSD.tar.gz", ODISEE_VERSION));
+                    case "linux-64-tgz":
+                        facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_Linux_x86_64.tar.gz", odiseeVersion));
                         break;
-                    case "osx-tgz":
-                        facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_OSX.tar.gz", ODISEE_VERSION));
+                    case "freebsd-64-tgz":
+                        facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_FreeBSD_amd64.tar.gz", odiseeVersion));
                         break;
-                    case "osx-dmg":
-                        facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_OSX.dmg", ODISEE_VERSION));
+                    case "freebsd-32-tgz":
+                        facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_FreeBSD_i386.tar.gz", odiseeVersion));
+                        break;
+                    case "osx-64-dmg":
+                        facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_OSX_x86_64.dmg", odiseeVersion));
+                        break;
+                    case "osx-64-tgz":
+                        facesHelper.jsfRedirect(String.format("http://www.odisee.de/download/odisee-server/Odisee_%s_OSX_x86_64.tar.gz", odiseeVersion));
                         break;
                 }
                 break;
