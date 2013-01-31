@@ -13,6 +13,7 @@
     <f:event type="preRenderView" listener="#{state.preRenderView}"/>
 </f:metadata>
 <h:body styleClass="body_bgsmall">
+    <h:messages/>
     <div id="wrapper-header">
         <div id="header_small" class="clearfix">
             <div class="wrapper_menu_small">
@@ -44,7 +45,6 @@
         </div>
     </div>
     <ui:insert name="content"/>
-    <h:messages/>
     <odi:footer/>
     <odi:googleanalytics/>
 </h:body>
