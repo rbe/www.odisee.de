@@ -6,6 +6,11 @@
 
 <ui:composition template="/layout.xhtml">
 
+    <ui:define name="head">
+        <h:outputStylesheet library="google-code-prettify" name="hemisu-light-rbe.css"/>
+        <h:outputScript library="google-code-prettify" name="prettify.js"/>
+    </ui:define>
+
     <ui:define name="slidersmall">
 
         <div class="custom_slidersmall">
@@ -21,11 +26,24 @@
                 <div id="contentinnermenu">
                     <div class="moduletable_products">
                         <ul class="menu">
-                            <li class="item-178">
+                            <li>
                                 <h:outputLink value="#{facesContext.externalContext.requestContextPath}/product/odisee-server.xhtml">Odisee Server</h:outputLink>
                             </li>
-                            <li class="item-178 current active">
+                            <li class="current active">
                                 <h:outputLink value="#{facesContext.externalContext.requestContextPath}/product/odisee-client.xhtml">Odisee Client</h:outputLink>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>
+                                        <h:outputLink value="#Java">Java</h:outputLink>
+                                    </li>
+                                    <li>
+                                        <h:outputLink value="#MicrosoftNET">Microsoft .NET</h:outputLink>
+                                    </li>
+                                    <li>
+                                        <h:outputLink value="#PHP">PHP</h:outputLink>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -38,20 +56,121 @@
                                 <br/>
                                 <h2>Entwicklung und Test</h2>
                                 <ul>
-                                    <li>Microsoft Windows
+                                    <li style="list-style-type: none;">
+                                        <h:commandLink action="#{download.start('odisee-client', 'client-vbnet')}">Installer</h:commandLink> f&uuml;r Microsoft Windows
                                         <br/>
-                                        <h:commandLink action="#{download.start('odisee-client', 'client-vbnet')}">Installer f&uuml;r Windows</h:commandLink>
                                         <br/>
-                                        <h:outputLink value="http://git.odisee.de/client-vbnet/src" target="_blank">Quellcode in Visual Basic .NET</h:outputLink>
+                                        <h:graphicImage library="images" name="OdiseeClient_VB_800x.png" width="800" height="554"/>
                                     </li>
                                 </ul>
+                                <br/>
+                                <h2>Client API</h2>
+                                <ul>
+                                    <li style="list-style-type: none;"><h3 id="Java">Java</h3>
+                                        <br/>
+                                        <h:outputLink value="http://git.odisee.de/client-java/src" target="_blank">Quellcode</h:outputLink> f&uuml;r Java 6+ bei bitbucket.org
+                                        <br/>
+                                        <br/>
+                                        <pre class="prettyprint lang-bash">git clone https://git.odisee.de/client-java.git</pre>
+                                        <br/>
+                                        <br/>
+                                        <pre class="prettyprint linenums lang-java">import eu.artofcoding.odisee.client.OdiseeClient;
+
+// Create Odisee client with service URL and authentication
+OdiseeClient odisee = OdiseeClient.createClient("http://service.odisee.de", "username", "password");
+
+// Create a new request for template HalloOdisee
+// By default, the last call to createRequest is remembered by the client
+odisee.createRequest("HalloOdisee");
+
+// Set value for userfield "hallo"
+odisee.setUserfield("hallo", "Odisee");
+
+// Set value in table "Tabelle1" cell "A4"
+odisee.setTableCellValue("Tabelle1", "A4", "value in a table cell");
+
+// Generate document, PDF by default
+byte[] document = odisee.process();</pre>
+                                        <br/>
+                                        <br/>
+                                    </li>
+                                    <li style="list-style-type: none;">
+                                        <h3 id="MicrosoftNET">Microsoft .NET, Visual Basic</h3>
+                                        <br/>
+                                        <h:outputLink value="http://git.odisee.de/client-vbnet/src" target="_blank">Quellcode</h:outputLink> f&uuml;r Visual Basic .NET 2.0+ bei bitbucket.org
+                                        <br/>
+                                        <br/>
+                                        <pre class="prettyprint lang-bash">git clone https://git.odisee.de/client-vbnet.git</pre>
+                                        <br/>
+                                        <br/>
+                                        <pre class="prettyprint linenums lang-vb">Imports Odisee.Client.Http
+
+' Create Odisee client with service URL and authentication '
+Dim odiseeClient As OdiseeClient = OdiseeSimpleHttpClient.createClient()
+
+' Create a new request for template HalloOdisee '
+' By default, the last call to createRequest is remembered by the client '
+odiseeClient.createRequest(template)
+
+' Set value for userfield "hallo" '
+odiseeClient.setUserfield("Hallo", "Welt")
+
+' Set value in table "Tabelle1" cell "A4" '
+odiseeClient.setTableCellValue("Tabelle1", "A4", "Dieser Text stammt vom OdiseeClient/VB.NET!")
+
+' Generate document, PDF by default, waiting for up to 20 seconds, using HTTP BASIC authentication '
+odiseeClient.process(20, "Basic")
+
+' Save generated document to disk '
+Dim filename As String = "C:\HalloOdisee.pdf"
+Helper.HttpPost.saveDocument(myState.odiseeClient.xmlDoc, webResponse, filename)</pre>
+                                        <br/>
+                                        <br/>
+                                    </li>
+                                    <li style="list-style-type: none;"><h3 id="PHP">PHP</h3>
+                                        <br/>
+                                        <h:outputLink value="http://git.odisee.de/client-php/src" target="_blank">Quellcode</h:outputLink> f&uuml;r PHP 5.3+ bei bitbucket.org
+                                        <br/>
+                                        <br/>
+                                        <pre class="prettyprint lang-bash">git clone https://git.odisee.de/client-php.git</pre>
+                                        <br/>
+                                        <br/>
+                                        <pre class="prettyprint linenums lang-php">// Autoloading
+define('ODISEE_CLASS_DIR', dirname(__FILE__) . '/class/');
+set_include_path(get_include_path() . PATH_SEPARATOR . ODISEE_CLASS_DIR);
+spl_autoload_extensions('.class.php');
+spl_autoload_register();
+
+// Odisee uses namespaces
+use \Odisee\Odisee;
+
+// Create Odisee client with service URL and authentication
+$odisee = Odisee::createClient('http://service.odisee.de', 'username', 'password');
+
+// Create a new request for template HalloOdisee
+$request = $odisee->createRequest('HalloOdisee');
+
+// Set value for userfield 'hallo'
+$odisee->setUserfield($request, 'hallo', 'Odisee');
+
+// Set value in table 'Tabelle1' cell 'A4'
+$odisee->setTableCellValue($request, 'Tabelle1', 'A4', 'value in a table cell');
+
+// Generate document, PDF by default
+$document = $odisee->process();</pre>
+                                    </li>
+                                </ul>
+                                <script type="text/javascript" language="JavaScript">
+                                    //<![CDATA[
+                                    prettyPrint();
+                                    //]]>
+                                </script>
                             </h:form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </ui:define>
 
 </ui:composition>
