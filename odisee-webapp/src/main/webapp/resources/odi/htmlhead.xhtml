@@ -1,41 +1,41 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:cc="http://java.sun.com/jsf/composite"
-      xmlns:odi="http://java.sun.com/jsf/composite/odi">
+      xmlns:o="http://omnifaces.org/ui">
 
-<!-- INTERFACE -->
 <cc:interface>
 </cc:interface>
 
-<!-- IMPLEMENTATION -->
 <cc:implementation>
     <title>Odisee&reg;</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
     <h:outputStylesheet library="css" name="style.css"/>
     <link href="#{resource['images:favicon.ico']}" rel="shortcut icon" type="image/x-icon"/>
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="/templates/site/js/html5.js"></script>
-    <style type="text/css">
-        .bg {
-            behavior: url(/templates/site/js/PIE.htc);
-        }
-    </style>
-    <![endif]-->
-    <!--[if IE]>
-    <link href="/templates/site/css/ie.css" rel="stylesheet" type="text/css"/>
-    <![endif]-->
-    <!--[if lt IE 7]>
-    <div style=' clear: both; text-align:center; position: relative;'>
-        <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg" border="0" alt=""/></a>
-    </div>
-    <![endif]-->
+    <!--
+    <o:conditionalComment if="lte IE 6">
+        <link href="css/ie6only.css" rel="stylesheet" type="text/css"/>
+    </o:conditionalComment>
+    <o:conditionalComment if="lte IE 7">
+        <link href="css/ie7only.css" rel="stylesheet" type="text/css"/>
+    </o:conditionalComment>
+    <o:conditionalComment if="lte IE 8">
+        <link href="css/ie8only.css" rel="stylesheet" type="text/css"/>
+    </o:conditionalComment>
+    <o:conditionalComment if="IE">
+        <link href="css/ie.css" rel="stylesheet" type="text/css"/>
+    </o:conditionalComment>
+    -->
+    <o:conditionalComment if="lt IE 7">
+        <div style='clear: both; text-align: center; position: relative;'>
+            <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg" border="0" alt=""/></a>
+        </div>
+    </o:conditionalComment>
     <!-- IE Fix for HTML5 Tags -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <o:conditionalComment if="lt IE 9">
+        <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    </o:conditionalComment>
 </cc:implementation>
 
 </html>
